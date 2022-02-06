@@ -70,6 +70,43 @@ null_ls.setup({
     on_attach = on_attach
 })
 
+nvim_lsp.texlab.setup({
+  cmd = { "texlab" },
+  filetypes = { "tex", "bib" },
+
+  settings = {
+    texlab = {
+      auxDirectory = ".",
+      bibtexFormatter = "texlab",
+      build = {
+        args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+        executable = "latexmk",
+        forwardSearchAfter = false,
+        onSave = true 
+      },
+      chktex = {
+        onEdit = false,
+        onOpenAndSave = false
+      },
+      diagnosticsDelay = 300,
+      formatterLineLength = 80,
+      forwardSearch = {
+        args = {}
+      },
+      latexFormatter = "latexindent",
+      latexindent = {
+        modifyLineBreaks = false
+      }
+    }
+  },
+  single_file_support = true,
+
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  }
+})
+
 
 local servers = { 'clangd', 'emmet_ls', 'html', 'cssls' }
 for _, lsp in ipairs(servers) do

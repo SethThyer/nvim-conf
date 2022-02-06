@@ -67,3 +67,5 @@ require("onedark").setup {
 }
 require("onedark").load()
 
+-- Misc Plugin setups
+require'colorizer'.setup()

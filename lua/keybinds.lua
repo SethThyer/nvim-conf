@@ -7,3 +7,6 @@ vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<CR>', { si
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', { silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<CR>', { silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<CR>', { silent = true })
+
+-- General
+vim.api.nvim_set_keymap('n', '<leader>o', '<cmd>setlocal spell! spelllang=en_au<CR>', { silent = false })
